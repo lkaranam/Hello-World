@@ -1,43 +1,43 @@
 node('master') {
     stage('Build') {
-        sh "echo Build"
+        "echo Build"
     }
     stage('Test'){
       parallel (
         "JUnit": { 
-            sh "echo JUnit"
+            "echo JUnit"
         },
         "DBUnit": { 
-            sh "echo DBUnit"
+            "echo DBUnit"
         },
         "Jasmine": { 
-            sh "echo Jasmine"
+            "echo Jasmine"
         },
       )
     }
     stage('Browser Tests'){
       parallel (
         "Firefox": { 
-            sh "echo Firefox"
+            "echo Firefox"
         },
         "Edge": { 
-            sh "echo Edge"
+             "echo Edge"
         },
         "Safari": { 
-            sh "echo Safari"
+             "echo Safari"
         },
         "Chrome": { 
-            sh "echo Chrome"
+             "echo Chrome"
         },
       )
     }
     stage('Dev'){
-        sh "echo Dev"
+        "echo Dev"
     }
     stage('Staging'){
-        sh "echo Staging"
+        "echo Staging"
     }
     stage('Production'){
-        sh "echo Production"
+        "echo Production"
     }
 }
